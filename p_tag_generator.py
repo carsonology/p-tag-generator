@@ -21,7 +21,7 @@ for index, graf in enumerate(grafs):
 print(p_tag_grafs)
 
 #input desired csv file name for final output
-file_name = "choc-cookie.txt"
+file_name = "your-file-name.txt"
 
 #write p tag grafs to a file ready for copying
 with open(file_name, 'w') as file:
