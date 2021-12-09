@@ -3,15 +3,18 @@
 #get paragraphs that will be wrapped in p tags from user
 # note: you must type the word "end" in all lowercase after all the lines
 # you want to input so the program knows when to stop collecting lines.
+import re
+
 lines = []
 print('Copy and paste paragraphs, with the word "end" as the final paragraph: ')
 while True:
     line = input()
-    if line != "end":
+    if (line != "end") and (re.findall(r"[\w]", line)):
         if line:
             lines.append(line)
-    else:
+    elif (line == "end"):
         break
+        
 
 #initiate p tag string that will contain wrapped grafs
 p_tag_grafs = "<p>"
@@ -25,7 +28,7 @@ for index, graf in enumerate(lines):
 print(p_tag_grafs)
 
 #input desired csv file name for final output
-file_name = "file-name.txt"
+file_name = "dignity.txt"
 
 #write p tag grafs to a file ready for copying
 with open(file_name, 'w') as file:
